@@ -16,7 +16,7 @@ final class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: false)
         if let result = getResult() {
             answerTitleLabel.text = "Вы - \(result.rawValue)!"
             answerDescriptionLabel.text = result.definition
@@ -37,7 +37,7 @@ final class ResultViewController: UIViewController {
 
 //MARK: Function for the determination which animal is the user
 extension ResultViewController {
-    private func getResult() -> Animal?{
+    private func getResult() -> Animal? {
         var dict: [Animal: Int] = [:]
         for answer in answers {
             if let oldValue = dict[answer.animal]{
